@@ -64,39 +64,7 @@ public class PersonService {
 		return action;
 	}
 	
-	public boolean updatePerson(Person per, int id) {
-		boolean action = false;
-		try {
-			this.em = this.factory.createEntityManager();
-			EntityTransaction transaction = em.getTransaction();
-			transaction.begin();
-			Person pUp = new Person();
-			pUp = getPersonId(id);
-			if(pUp!=null) {
-				System.out.println("Si consiguio la entidad" + pUp.getNombreCompleto().getPrimernombre());
-//				per.setIdPersona(pUp.getIdPersona());
-//				String qlString = "UPDATE persona set nombre ='Manuelito'  where id =9";
-//				em.createNativeQuery(qlString);
-				
-				transaction.commit();
-				action = true;	
-				
-			}
-			
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("error de insert " + e.getMessage());
-			return false;
-			// TODO: handle exception
-		}finally {
-			em.close();
-		}
-		
-		return action;	
-		
-	}
+ 
 	
 	public Person getPersonId(int id) {
 		this.em = this.factory.createEntityManager();

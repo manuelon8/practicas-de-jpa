@@ -60,7 +60,7 @@ public class App {
 		depMarketing.setProjectlist(projectList2);
 		serv.createDeparmentList(depMarketing);
 		
-	     //Create Clas Set2
+	 
 	      Set<Department> deps = new HashSet();
 	      deps.add(depMarketing);
 	      deps.add(depIT);
